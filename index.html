@@ -7,6 +7,63 @@
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <h1>Web APIs: Code Quiz</h1>
+    <div id="one"><button class="start">Start</button></div>
+    <div id="two"></div>
+
+
+
+    <SCRIPT>
+        let i    = 0
+        let info = "1"
+        let qa   = 
+        [
+            {
+                question:  "What is your favorite sction?",
+                answer:     "Hotdog",
+                btns:       ["HTML", "CSS", "JavaScript", "HotDog"] 
+            },
+            {
+                question:  "What technology uses wrappers?",
+                answer:     "Hotdog",
+                btns:       ["JQuery", "Python", "JavaScript", "HotDog"] 
+            },
+            {
+                question:  "What technology allows developers to expand their career?",
+                answer:     "Hotdog",
+                btns:       ["JQuery", "Python", "JavaScript", "HotDog"] 
+            }
+
+
+        ]
+
+        console.log(qa[0].question)
+
+        document.addEventListener('click', event => {
+            event.preventDefault()
+
+      if (event.target.classList.contains('start')) {
+        let quizElem = document.createElement('div')
+        quizElem.className = 'two'
+        quizElem.innerHTML = `
+            <div class="card-content">
+              <h3 class="little">${qa[i].question}</h3>
+              <button id="btn1"> ${qa[i].btns[0]}</button>
+              <button id="btn1"> ${qa[i].btns[1]}</button>
+              <button id="btn1"> ${qa[i].btns[2]}</button>
+              <button id="btn1"> ${qa[i].btns[3]}</button>
+              <div></div>
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light removeWatchlist">Next</button>
+            </div>
+        `
+        document.getElementById('two').append(quizElem)
+        // event.target.parentNode.parentNode.remove()
+
+      }
+    })
+    
+    </SCRIPT>
 </body>
 </html>
